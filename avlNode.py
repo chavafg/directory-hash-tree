@@ -12,4 +12,5 @@ class avlnode(object):
         return str(self.key)
 
     def __repr__(self):
-        return str(self.key, self.DirectoryItem)
+        #return str( str(self.key) + ' - ' + str(self.DirectoryItem))
+        return str(self.key)

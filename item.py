@@ -7,4 +7,6 @@ class DirectoryItem:
         self.home_phone = home_phone
 
     def __str__(self):
-        return str(self.name)
+        return str(self.name + '\n' + self.last_name 
+                + '\n' + self.address + '\n' + str(self.mobile_phone)
+                + '\n' + str(self.home_phone))

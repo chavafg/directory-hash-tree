@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from avlnode import avlnode
+from avlNode import avlnode
 from item import DirectoryItem
 
 class avltree(object):    
@@ -227,36 +227,15 @@ class avltree(object):
     def search(self, key):
         if self.node != None:
             if self.node.key == key:
-                print('Found key')
-                # print here
-                
-                # Key found in leaf node, just erase it
-                # if not self.node.left.node and not self.node.right.node:
-                #    self.node = None
-                # Node has only one subtree (right), replace root with that one
-                # elif not self.node.left.node:                
-                #    self.node = self.node.right.node
-                # Node has only one subtree (left), replace root with that one
-                # elif not self.node.right.node:
-                #    self.node = self.node.left.node
-                #else:
-                    # Find  successor as smallest node in right subtree or
-                    #       predecessor as largest node in left subtree
-                #    successor = self.node.right.node  
-                #    while successor and successor.left.node:
-                #        successor = successor.left.node
-                #
-                #    if successor:
-                #        self.node.key = successor.key
-
-                        # Delete successor from the replaced node right subree
-                #        self.node.right.delete(successor.key)
-
+                print 'Found key' 
+                return self.node.DirectoryItem
             elif key < self.node.key:
                 self.node.left.search(key)
 
             elif key > self.node.key:
                 self.node.right.search(key)
+        else:
+            print 'No encontre nada'
 
     def inorder_traverse(self):
         """
@@ -280,13 +259,16 @@ class avltree(object):
 
         if node.right.node:
             self.display(node.right.node, level + 1)
-            print (('\t' * level), ('    /'))
+            print ('\t' * level), ('    /')
 
-        print (('\t' * level), node)
+        print ('\t' * level), node
 
         if node.left.node:
-            print (('\t' * level), ('    \\'))
+            print ('\t' * level), ('    \\')
             self.display(node.left.node, level + 1)
+
+    def __str__(self):
+        return str(self.height)
 
 # Demo    
 if __name__ == "__main__": 
@@ -306,4 +288,5 @@ if __name__ == "__main__":
 
     #print tree.inorder_traverse()
     print (tree.inorder_traverse())
-    tree.display()
+    #tree.display()
+    print (tree)
