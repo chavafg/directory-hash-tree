@@ -20,10 +20,28 @@ hashTable.insertInAVLtree(table,52,record2)
 hashTable.insertInAVLtree(table,53,record3)
 hashTable.insertInAVLtree(table,49,record4)
 hashTable.insertInAVLtree(table,81,record5)
+hashTable.insertInAVLtree(table,11,record5)
+hashTable.insertInAVLtree(table,31,record5)
+hashTable.insertInAVLtree(table,51,record5)
+hashTable.insertInAVLtree(table,111,record5)
+hashTable.insertInAVLtree(table,201,record5)
+hashTable.insertInAVLtree(table,21,record2)
 hashTable.insertInAVLtree(table,57,record6)
-#print(hashTable.search(table,52))
+#print hashTable.search(table,201)
 
-print (table)
+for item in table:
+    if isinstance(item, avltree):
+        print item.inorder_traverse()
+
+#print table
 hashTable.delete(table,49)
-print (table)
+hashTable.delete(table,52)
+hashTable.delete(table,201)
+hashTable.search(table,201)
+hashTable.search(table,31)
+#print table
+
+for item in table:
+    if isinstance(item, avltree):
+        print item.inorder_traverse()
 

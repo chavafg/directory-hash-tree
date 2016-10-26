@@ -195,9 +195,10 @@ class avltree(object):
             if self.node.key == key:
                 # Key found in leaf node, just erase it
                 if not self.node.left.node and not self.node.right.node:
+                    print 'Deleting ' + str(self.node.key)
                     self.node = None
                 # Node has only one subtree (right), replace root with that one
-                elif not self.node.left.node:                
+                elif not self.node.left.node:
                     self.node = self.node.right.node
                 # Node has only one subtree (left), replace root with that one
                 elif not self.node.right.node:
@@ -205,6 +206,8 @@ class avltree(object):
                 else:
                     # Find  successor as smallest node in right subtree or
                     #       predecessor as largest node in left subtree
+                    # This is the case where the node is in the middle of the
+                    # tree or is the root of the tree.
                     successor = self.node.right.node  
                     while successor and successor.left.node:
                         successor = successor.left.node
@@ -235,7 +238,7 @@ class avltree(object):
             elif key > self.node.key:
                 self.node.right.search(key)
         else:
-            print 'No encontre nada'
+            print 'Key was not found'
 
     def inorder_traverse(self):
         """

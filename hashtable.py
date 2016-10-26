@@ -15,8 +15,14 @@ class Hastable(object):
         def insertInAVLtree(self,table,key,record):
             index = self.hash_function(key) 
             hashTree = avltree()
-            table[index] = hashTree
-            hashTree.insert(key, record)
+            # Need to add the case where there is a tree
+            # already there, so it is not replaced by the
+            # new insert
+            if isinstance(table[index], avltree):
+                table[index].insert(key,record)
+            else:
+                table[index] = hashTree
+                hashTree.insert(key, record)
 	
 	def search(self,table,key):
             index = self.hash_function(key)
