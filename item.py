@@ -1,4 +1,5 @@
 class DirectoryItem:
+
     def __init__(self, name, last_name, address, mobile_phone, home_phone):
         self.name = name
         self.last_name = last_name
@@ -7,6 +8,6 @@ class DirectoryItem:
         self.home_phone = home_phone
 
     def __str__(self):
-        return str(self.name + '\n' + self.last_name 
-                + '\n' + self.address + '\n' + str(self.mobile_phone)
-                + '\n' + str(self.home_phone))
+        return str(self.name + '\n' + self.last_name
+                   + '\n' + self.address + '\n' + str(self.mobile_phone)
+                   + '\n' + str(self.home_phone))

@@ -1,5 +1,6 @@
 from item import DirectoryItem
 
+
 class avlnode(object):
 
     def __init__(self, key, DirectoryItem):
@@ -12,5 +13,5 @@ class avlnode(object):
         return str(self.key)
 
     def __repr__(self):
-        #return str( str(self.key) + ' - ' + str(self.DirectoryItem))
+        # return str( str(self.key) + ' - ' + str(self.DirectoryItem))
         return str(self.key)
