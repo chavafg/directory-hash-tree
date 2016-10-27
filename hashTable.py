@@ -3,9 +3,7 @@ from item import DirectoryItem
 from avlNode import avlnode
 
 
-class Hastable(object):
-    hastable = [0] * 10
-    result = ''
+class HashTable(object):
 
     def hash_function(self, x): return x % 10
 

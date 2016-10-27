@@ -1,6 +1,6 @@
 from avlNode import avlnode
 from item import DirectoryItem
-from hashtable import Hastable
+from hashTable import HashTable
 from avlTree import avltree
 
 record = DirectoryItem('TestUser1', 'Test1', 'address', 99901, 99991)
@@ -11,7 +11,7 @@ record5 = DirectoryItem('TestUser5', 'Test5', 'otraaddress', 99905, 8885)
 record6 = DirectoryItem('TestUser6', 'Test6', 'otraaddress', 99906, 8886)
 
 tree = avltree()
-hashTable = Hastable()
+hashTable = HashTable()
 table = [0] * 10
 
 # hashTable.insert(table,41,record)
