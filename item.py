@@ -11,3 +11,8 @@ class DirectoryItem:
         return str(self.name + '\n' + self.last_name
                    + '\n' + self.address + '\n' + str(self.mobile_phone)
                    + '\n' + str(self.home_phone))
+
+    def __repr__(self):
+        return str(':::' + self.name + ',' + self.last_name
+                   + ',' + self.address + ',' + str(self.mobile_phone)
+                   + ',' + str(self.home_phone) + ':::')

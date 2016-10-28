@@ -10,7 +10,7 @@ class avlnode(object):
         self.DirectoryItem = DirectoryItem
 
     def __str__(self):
-        return str(self.key)
+        return str(self.DirectoryItem)
 
     def __repr__(self):
         # return str( str(self.key) + ' - ' + str(self.DirectoryItem))

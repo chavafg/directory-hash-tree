@@ -113,7 +113,6 @@ class avltree(object):
             if self.node.key == key:
                 # Key found in leaf node, just erase it
                 if not self.node.left.node and not self.node.right.node:
-                    print 'Deleting ' + str(self.node.key)
                     self.node = None
                 # Node has only one subtree (right), replace root with that one
                 elif not self.node.left.node:
@@ -148,7 +147,7 @@ class avltree(object):
     def search(self, key):
         if self.node != None:
             if self.node.key == key:
-                print 'Found key'
+                print 'Found key ' + str(key)
                 return self.node.DirectoryItem
             elif key < self.node.key:
                 self.node.left.search(key)
@@ -156,7 +155,7 @@ class avltree(object):
             elif key > self.node.key:
                 self.node.right.search(key)
         else:
-            print 'Key was not found'
+            print 'Key ' + str(key) + ' was not found'
 
     def inorder_traverse(self):
         result = []
@@ -165,7 +164,7 @@ class avltree(object):
             return result
 
         result.extend(self.node.left.inorder_traverse())
-        result.append(self.node.key)
+        result.append(self.node.DirectoryItem)
         result.extend(self.node.right.inorder_traverse())
 
         return result
@@ -185,7 +184,7 @@ class avltree(object):
             self.display(node.left.node, level + 1)
 
     def __str__(self):
-        return str(self.height)
+        return str(self.node)
 
 # Demo
 if __name__ == "__main__":
