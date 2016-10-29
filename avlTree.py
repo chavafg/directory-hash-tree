@@ -111,6 +111,7 @@ class avltree(object):
     def delete(self, key):
         if self.node != None:
             if self.node.key == key:
+                print self.node.DirectoryItem
                 # Key found in leaf node, just erase it
                 if not self.node.left.node and not self.node.right.node:
                     self.node = None
